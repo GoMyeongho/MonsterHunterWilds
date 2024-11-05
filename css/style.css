@@ -1,4 +1,181 @@
-*{
-  display: flex;
 
+/* Chrome, Safari, Edge 등에서 스크롤바 숨기기 */
+::-webkit-scrollbar {
+  display: none; /* 스크롤바를 숨김 */
+}
+
+/* Firefox에서 스크롤바 숨기기 */
+* {
+  scrollbar-width: none; /* 스크롤바를 숨김 */
+}
+
+/* Internet Explorer 및 Edge에서 스크롤바 숨기기 */
+body {
+  -ms-overflow-style: none; /* 스크롤바를 숨김 */
+}
+
+#container {
+  box-sizing: border-box;
+}
+
+#video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100vw;
+  min-height: 100vh;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+
+}
+
+#menuLogo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 10px 20px;
+  z-index: 10;
+  background-color: aquamarine;
+}
+
+#menu{
+  width: 100%;
+  height: 100%;
+}
+
+main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#home{
+  display: flex;
+  justify-content: space-between; /* 상단, 중간, 하단으로 공간 분배 */
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: bisque;
+}
+
+.main-content{
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  justify-content: space-between;
+}
+
+#platform {
+  background-color: aquamarine;
+}
+
+.sns{
+  background-color: aquamarine;
+}
+
+#trailer{
+  background-color: aquamarine;
+}
+
+#main-logo{
+  justify-self: center;
+  background-color: aquamarine;
+}
+
+#main-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: aqua;
+}
+
+#award{
+  display: flex;
+  width: 100vw;
+  height: auto;
+  padding-bottom: 50px;
+  background-color: beige;
+  justify-content: center;
+}
+.images{
+  padding: 0 10vw;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.images img{
+  width: 10vw;
+  max-width: 120px;
+  min-width: 100px;
+  height: auto;
+}
+
+#banner{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  background-color: bisque;
+  justify-content: center;
+}
+
+.banner{
+  display: flex;
+  justify-content: center;
+}
+
+.desc{
+  display: flex;
+  width:100vw;
+  justify-content: space-between;
+  background-size: cover; /* 이미지가 요소를 가득 채우도록 */
+}
+
+.desc-main{
+  padding: 10% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: beige;
+}
+
+#products{
+  display: flex;
+  flex-direction: column;
+  width:100vw;
+  height: 80vw;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  background-color: bisque /* 이미지가 요소를 가득 채우도록 */
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+}
+
+.product{
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: aquamarine;
+}
+
+footer{
+  width: 100vw;
+
+  z-index: 1;
+}
+
+#sns-footer{
+  width: 100vw;
+  display: flex;
+  background-size: cover;
+  justify-content: center;
 }

@@ -2,19 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>MONSTER HUNTER WILDS | CAPCOM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
   <link rel="stylesheet" href="/css/style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Markazi+Text&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script>
+    (function(d) {
+      var config = {
+          kitId: 'cvx8btf',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 </head>
 <body>
 <div id="container">
   <main>
-    <div id="menuLogo">
-      메뉴로고
+    <div id="nav">
+      <button><!--"lang"-->
+        <img src="/img/common/earth_ic.svg" alt="이미지">
+        　한국어
+        <!--
+        <select name="lang" id="lang">
+          <option value="english-us">English(US)</option>
+          <option value="english-uk">English(UK)</option>
+          <option value="english-au">English(AU)</option>
+          <option value="english-asia">English(Asia)</option>
+          <option value="francais">Français</option>
+          <option value="italiano">Italiano</option>
+          <option value="deutsch">Deutsch</option>
+          <option value="polski">Polski</option>
+          <option value="espanol">Español</option>
+          <option value="espanol-latam">Español(LATAM)</option>
+          <option value="portugues-brazil">Português do Brasil</option>
+          <option value="chinese1">繁體中文</option>
+          <option value="chinese2">简体中文</option>
+          <option value="korean">한국어</option>
+          <option value="japanese">日本語</option>
+        </select>
+        -->
+      </button>
+      <div id="nav-toggle">
+        <img src="/img/media/global-nav.7acacc03.png" style="aspect-ratio: 1070/1070" >
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </div>
     <div id="menu" hidden="hidden">
       메뉴목록
@@ -25,6 +65,7 @@
           <source src="/movie/01-TOP-02.mp4" type="video/mp4" />
         </video>
       </div>
+      <div id="overlay"></div>
       <div id="home">
         <div class="main-content">
           <ul id="platform">
@@ -62,35 +103,125 @@
                 <img src="/img/common/sns/sns_ig_w.svg" alt="instagram" style="aspect-ratio: 504/504">
               </a>
             </li>
-
           </ul>
-
           <div id="trailer">
             <div id="trailer-title">
-              5th trailer
+              <img src="/img/media/icon-current.7d1ce25d.png" alt="" class="blink">
+              5th Trailer
             </div>
-            div#id
+            <a href="#" id="trailer-main" class="button">
+              <img src="/img/youtube/5th_trailer.jpg" style="aspect-ratio: 1920/1080">
+              <img src="/img/media/frame_s.dc9d0cae.png" alt="">
+              <img src="/img/common/youtube-play.png" alt="">
+            </a>
+            <a href="#" id="trailer-button" class="button">
+              <img src="/img/media/frame_03_l.e747427b.png" alt="" style="aspect-ratio: 36/21">
+              <img src="/img/media/frame_03_r.2ecf230a.png" alt="" style="aspect-ratio: 36/21">
+              <img src="/img/media/more_icon.cf838f36.png" alt="">
+              <div class="border" style="width: 98%; height: 100%; margin: 0;"></div>
+              <p>MEDIA</p>
+            </a>
           </div>
         </div>
 
         <div class="main-content">
-          <div>빈칸</div>
           <div>
+            <div></div>
             <div id="main-logo">
-              메인로고
-            </div>
-            <div id="reserve">
-              예약접수안내
+              <img src="/img/mainVisual/logo_c.png" alt="">
+              <img src="/img/mainVisual/logo_a.png" alt="">
+              <img src="/img/mainVisual/logo_b.png" alt="">
+              <img src="/img/mainVisual/logo_d.png" alt="">
             </div>
           </div>
+          <div id="open">
+            <div class="number">
+              2025
+            </div>
+            <div class="char-kor">
+              년
+            </div>
+            <div class="number">
+              2
+            </div>
+            <div class="char-kor">
+              월
+            </div>
+            <div class="number">
+              28
+            </div>
+            <div class="char-kor">
+              일
+            </div>
+          </div>
+          <a href="#" id="reserve" style=" background-image: url('/img/media/buy_bg.4676bb8f.png');" class="button">
+            <div class="border"></div>
+            <img src="/img/media/frame_03_l.e747427b.png" alt="" style="aspect-ratio: 36/21">
+            <img src="/img/media/frame_03_r.2ecf230a.png" alt="" style="aspect-ratio: 36/21">
+            <img src="/img/media/more_icon.cf838f36.png" alt="">
+            <p>예약 접수 중</p>
+          </a>
           <div id="scroll">
-            스크롤
+            <img src="/img/icon/scroll.png" alt="">
+            SCROLL
           </div>
         </div>
 
-        <div id="main-menu">
-          메인페이지의 메뉴
+        <div class="main-content">
+          <div></div>
+          <div id="main-nav">
+            <ul id="main-menu">
+              <li>
+                <a href="#" id="living-world">
+                  <img src="/img/media/circle-side.5b0a139a.png" alt="">
+                  <img src="/img/media/icon-current.7d1ce25d.png" alt="" class="blink">
+                </a>
+                <label for="living-world" class="text">
+                  <p>살아 숨쉬는 세계</p>
+                  <p>A LIVING WORLD</p>
+                </label>
+              </li>
+              <li>
+                <a href="#" id="hunting">
+                  <img src="/img/media/circle-side.5b0a139a.png" alt="">
+                </a>
+                <label for="hunting" class="text">
+                  <p>사냥</p>
+                  <p>HUNTING</p>
+                </label>
+              </li>
+              <li>
+                <a href="#" id="characters">
+                  <img src="/img/media/circle-side.5b0a139a.png" alt="">
+                </a>
+                <label for="characters" class="text">
+                  <p>등장인물</p>
+                  <p>CHARACTERS</p>
+                </label>
+              </li>
+              <li>
+                <a href="#" id="monsters">
+                  <img src="/img/media/circle-side.5b0a139a.png" alt="">
+                  <img src="/img/media/icon-current.7d1ce25d.png" alt="" class="blink">
+                </a>
+                <label for="monsters" class="text">
+                  <p>몬스터</p>
+                  <p>MONSTERS</p>
+                </label>
+              </li>
+              <li>
+                <a href="#" id="product">
+                  <img src="/img/media/circle-side.5b0a139a.png" alt="">
+                </a>
+                <label  for="product" class="text">
+                  <p>상품정보</p>
+                  <p>PRODUCTS</p>
+                </label>
+              </li>
+            </ul>
+          </div>
         </div>
+
       </div>
       <div id="award">
         <ul class="images">
@@ -109,49 +240,71 @@
         </ul>
       </div>
       <div id="banner">
+        <div class="divider" style="background-image: url('/img/media/f_line.1dae0747.png');"></div>
         <div class="banner">
-          <img src="/img/banner/obt/obt_ko-kr.png">
+          <img src="/img/media/icon-current.7d1ce25d.png" alt="" class="blink">
+          <a href="#" class="button" >
+            <img src="/img/banner/obt/obt_ko-kr.png">
+          </a>
         </div>
         <div class="banner">
-          <img src="/img/banner/guide/Guide_ko-kr.png">
-          <img src="/img/banner/weapon/wb_04_ko-kr.png">
+          <a href="#" class="button">
+            <img src="/img/banner/guide/Guide_ko-kr.png">
+          </a>
+          <a href="#" class="button">
+            <img src="/img/banner/weapon/wb_04_ko-kr.png">
+          </a>
+        </div>
+        <div class="divider" style="background-image: url('/img/media/f_line.1dae0747.png');"></div>
+      </div>
+
+      <div id="story">
+        <div class="desc" style="background-image: url('/img/media/bg_story.7f2fce90.png'); aspect-ratio: 1920/1438">
+          <div class="desc-main">
+            <div class="desc-title">
+              <img src="/img/icon/circle-01.svg" alt="">
+              <img src="/img/icon/circle-02.svg" alt="">
+              <img src="/img/icon/circle-03.svg" alt="">
+              <img src="/img/icon/circle-04.svg" alt="">
+              STORY
+            </div>
+
+            <div class="desc-content">
+              <div class="sub-title">
+                스토리 부제목
+              </div>
+
+              <div class="content">
+                스토리 내용
+              </div>
+            </div>
+          </div>
+          <div></div>
         </div>
       </div>
 
-      <div class="desc" style="background-image: url('/img/media/bg_story.7f2fce90.png'); aspect-ratio: 1920/1438">
-        <div></div>
-        <div class="desc-main">
-          <div class="desc-title">
-            스토리제목
-          </div>
-
-          <div class="desc-content">
-            <div class="sub-title">
-              스토리 부제목
+      <div id="intro">
+        <div class="desc" style="background-image: url('/img/media/bg_02_r.0255ba9c.png'); aspect-ratio: 3046/1868">
+          <div></div>
+          <div class="desc-main">
+            <div class="desc-title">
+              <img src="/img/icon/circle-01.svg" alt="">
+              <img src="/img/icon/circle-02.svg" alt="">
+              <img src="/img/icon/circle-03.svg" alt="">
+              <img src="/img/icon/circle-04.svg" alt="">
+              INTRODUCTION
             </div>
+            <div class="desc-content">
+              <div class="sub-title">
+                인트로 부제목
+              </div>
 
-            <div class="content">
-              스토리 내용
+              <div class="content">
+                인트로 내용
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="desc" style="background-image: url('/img/media/bg_02_r.0255ba9c.png'); aspect-ratio: 3046/1868">
-        <div class="desc-main">
-          <div class="desc-title">
-            인트로 제목
-          </div>
-          <div class="desc-content">
-            <div class="sub-title">
-              인트로 부제목
-            </div>
-
-            <div class="content">
-              인트로 내용
-            </div>
-          </div>
-        </div>
-        <div></div>
       </div>
 
       <div id="products">
@@ -200,5 +353,35 @@
     </div>
   </footer>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('banner');
+    const overlay = document.getElementById('overlay');
+    const story = document.getElementById('story');
+    const intro = document.getElementById('intro');
+
+    // IntersectionObserver 설정
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          overlay.style.opacity = '1'; // overlay 서서히 보이기
+        } else {
+          overlay.style.opacity = '0'; // overlay 서서히 숨기기
+        }
+      });
+    });
+    const observeSelf = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1'; // overlay 서서히 보이기
+        }
+      });
+    });
+    // #banner 요소 감지 시작
+    observer.observe(banner);
+    observeSelf.observe(story);
+    observeSelf.observe(intro);
+  });
+</script>
 </body>
 </html>

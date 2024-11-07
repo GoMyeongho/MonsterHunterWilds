@@ -14,9 +14,19 @@ body {
   -ms-overflow-style: none; /* 스크롤바를 숨김 */
 }
 
+.button{
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+.button:hover{
+  box-shadow: 0 0 5px 3px #dbe072;
+}
+
 #container {
   box-sizing: border-box;
   font-family: 'Segoe UI', 'Helvetica Neue', HelveticaNeue, YuGothic, 'Yu Gothic Medium', 'Yu Gothic', Verdana, Meiryo, sans-serif;
+  position: relative;
 }
 
 #video {
@@ -30,16 +40,76 @@ body {
   transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: -1;
-
 }
 
-#menuLogo {
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* 반투명 검정색 */
+  opacity: 0;/* 기본적으로 숨김 */
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+
+#nav button {
+  width: auto;
+  margin: clamp(0px, 2vw , 30px) 0;
+  font-size: clamp(0px, 1vw, 12px);
+  border: none;
+  background-color: rgba(0,0,0,0);
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+#nav {
   position: fixed;
   top: 0;
   right: 0;
-  margin: 10px 20px;
-  z-index: 10;
-  background-color: aquamarine;
+  width: 15vw;
+  height: 3vw;
+  display: inline-flex;
+  justify-content: flex-start;
+
+}
+
+#language{
+  margin: clamp(0px, 2vw , 30px) 0;
+  display:inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+button img{
+  width: 10%;
+  position: relative;
+}
+
+#nav-toggle{
+  width: 10vw;
+  height: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5%;
+  position: relative;
+  padding-right: 20px;
+}
+
+#nav-toggle img {
+  position: absolute; /* 부모 div 내에서 절대 위치 */
+  width: 4vw;
+  max-width: 60px;
+}
+
+.line {
+  height: 1px;
+  margin-left: clamp(0px, 1.5vw, 15px);
+  width: clamp(0px, 40%, 20px);
+  background-color: white;
 }
 
 #menu{
@@ -63,24 +133,34 @@ main{
 }
 
 .main-content{
-  max-width: 400px;
+  max-width: 300px;
+  width: 30vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+}
+
+.main-content:nth-child(2){
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
 }
 
 #platform {
   display: flex;
-  margin: 1vw;
+  margin-top: 5%;
+  padding: 5%;
+  gap: 10%;
 }
 
 #platform img{
-  width: 7vw;
-  padding:  1vw;
+  width: 100%;
   max-width: 100px;
 }
 
 .sns{
+  margin-top: 50%;
   margin-left: 5%;
   display: inline-flex;
   align-content: center;
@@ -88,22 +168,29 @@ main{
   writing-mode: vertical-lr;
   font-family: 'Markazi Text', source-han-serif-japanese, serif;
   color: white;
-  font-size: 1vw;
-  width: 2vw;
-  max-width: 30px;
-  gap: 15%;
+  font-size: clamp(0px, 1vw, 12px);
+  width: 10%;
+  max-width: 20px;
+  gap: 20%;
   white-space: nowrap;
-  letter-spacing: 1px;
+}
+
+.sns .button:hover{
+  box-shadow: none;
+  opacity: 0.5;
 }
 
 .text {
   align-self: center;
+  font-family: 'Markazi Text', source-han-serif-japanese, serif;
+  color: white;
+  letter-spacing: 1px;
 }
 
 .separator {
   position: relative; /* Positioning context for pseudo-elements */
   width: 1.5vw; /* Width of the separator */
-  max-width: 30px; /* Maximum width */
+  max-width: 20px; /* Maximum width */
   height: 1px; /* Height of the separator */
   background-color: white; /* Color of the separator */
   margin: 0 2px; /* Space between the separator and the dumbbell ends */
@@ -119,15 +206,14 @@ main{
   border-radius: 50%; /* Make it circular */
 }
 
-
 .separator::before {
   left: -0.25vw; /* Position the left circle */
-  top: -0.1vw; /* Align vertically with the separator */
+  top: -0.05vw; /* Align vertically with the separator */
 }
 
 .separator::after {
   right: -0.25vw; /* Position the right circle */
-  top: -0.1vw; /* Align vertically with the separator */
+  top: -0.05vw; /* Align vertically with the separator */
 }
 
 .sns img{
@@ -135,22 +221,273 @@ main{
 }
 
 #trailer{
-  width: 50%;
+  width: 70%;
+  padding-left: 7%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin-bottom: clamp(0px, 1.5vw, 20px);
+}
 
+#trailer-title{
+  align-self: center;
+  font-family: 'Markazi Text', 'source-han-serif-japanese', serif;
+  color: white;
+  letter-spacing: 1px;
+  font-size: clamp(0px, 1.5vw, 20px);
+  position: relative;
+  margin-left: clamp(0px, 1vw, 10px);;
+  margin-bottom: clamp(0px, 1vw, 10px);
+}
+
+#trailer-title img{
+  height: clamp(0px, 1.5vw, 20px);
+  position: absolute;
+  right: clamp(0px, 6vw, 80px);
+}
+
+#trailer-main{
+  width: 100%;
+  height: clamp(0px, 10vw, 120px);
+  position: relative;
+}
+
+#trailer-main img{
+  width: 100%;
+  position: absolute;
+}
+
+#trailer-main img:first-child{
+  width: 96%;
+  margin: 2%;
+}
+
+#trailer-main img:nth-child(3) {
+  margin-left: 80%;
+  margin-top: 37.5%;
+  width: 15%;
+}
+
+#trailer-button{
+  margin-top: 10%;
+  justify-self: left;
+  font-family: 'Markazi Text', 'source-han-serif-japanese', serif;
+  font-weight: bold;
+  color: rgb(199,192,171);
+  font-size: clamp(0px, 1.5vw, 20px);
+  position: relative;
+  margin-bottom: clamp(0px, 1.5vw, 20px);
+  width: 98%;
+  background-image: radial-gradient(circle, rgba(0,0,0,70%),rgba(0,0,0,30%) );
+  transition: all 0.5s ease;
+}
+
+#trailer-button .border:hover{
+  background-color: rgba(219, 224, 114, 0.3);
+}
+
+#trailer-button p{
+  padding: 3% 0;
+  text-align: center;
+}
+
+#trailer-button img{
+  z-index: 1;
+  width: 8%;
+  height: auto;
+  position: absolute;
+}
+
+#trailer-button img:nth-child(1){
+  right: 92%;
+}
+
+#trailer-button img:nth-child(2){
+  left: 92%;
+  top: 80%
+}
+
+#trailer-button img:nth-child(3){
+  height: 30%;
+  width: auto;
+  margin-left: 85%;
+  top: 35%;
 }
 
 #main-logo{
+  padding-top: 60%;
+  width: 100%;
+  height: auto;
+  display: flex;
   justify-self: center;
-  background-color: aquamarine;
 }
 
-#main-menu{
+#open{
+  margin-top: 50%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 0 5px black;
+  font-family: 'source-han-serif-korean',serif;
+}
+
+.char-kor{
+  padding-top: clamp(0px, 1vw, 8px);
+  font-size: clamp(0px, 2vw, 20px);
+}
+
+.number{
+  font-size: clamp(0px, 3vw, 28px);
+}
+
+#main-logo img {
+  position: absolute;
+  width: 100%;
+}
+
+#reserve{
+  font-family: 'source-han-serif-korean',serif;
+  font-weight: 700;
+  font-size: clamp(0px, 1vw, 16px);
+  width: 80%;
+  margin: 0 auto 30%;
+  color: rgb(199,192,171);
+  position: relative;
+  border-radius: 5px;
+  background-size: cover; /* 배경 이미지가 요소를 완전히 덮도록 크기 조정 */
+  background-position: center; /* 배경 이미지의 위치를 중앙으로 설정 */
+  background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정 */
+}
+
+#reserve p{
+  padding: 5% 0;
+  text-align: center;
+}
+
+#reserve img {
+  position: absolute;
+  width: 5%;
+  height: auto;
+}
+
+.border{
+  border-radius: 5px;
+  width: 95%;
+  height: 80%;
+  margin: 1% 2%;
+  position: absolute;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right bottom,rgba(0, 0, 0, 0), rgba(199, 192, 171, 1), rgba(199, 192, 171, 0.75),rgba(199, 192, 171, 0.5), rgba(199, 192, 171, 0.25),rgba(0, 0, 0, 0)
+  , rgba(199, 192, 171, 0.25), rgba(199, 192, 171, 0.5),  rgba(199, 192, 171, 0.75), rgba(199, 192, 171, 1), rgba(0, 0, 0, 0)) 1;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+#reserve img:nth-child(2){
+  right: 93%;
+  top: 8%
+}
+#reserve img:nth-child(3){
+  left: 93%;
+  bottom: 5%;
+}
+#reserve img:nth-child(4){
+  height: 20%;
+  width: auto;
+  top: 40%;
+  bottom: auto;
+  left: 90%;
+}
+
+#scroll{
+  width: 10%;
+  margin: 0 auto 5%;
+  padding-top: 10%;
+  position: relative;
+  font-family: "Markazi Text", source-han-serif-japanese, serif;
+  color: white;
+  text-align: center;
+  text-space: 2px;
+}
+
+#scroll img{
+  width: 100%;
+  margin-bottom: 10%;
+  animation: oscillate 3s infinite;
+}
+
+@keyframes oscillate {
+  0%, 100%{
+    transform: translateY(-30%);
+  }
+  50%{
+    transform: translateY(0);
+  }
+}
+
+#main-nav{
+  display: flex;
   justify-content: flex-end;
-  background-color: aqua;
+  width: 120%;
+  font-size: clamp(0px , 2vw, 24px);
+  position: absolute; /* 절대 위치로 설정 */
+  right: 0;  /* 오른쪽 끝에 위치 */
+  bottom: 0;
+}
+
+#main-menu {
+  width: 75%;
+  margin-left: auto;
+  margin-bottom: 10%;
+}
+
+#main-menu li{
+  display: flex;
+  margin-bottom: 10%;
+  align-items: center;
+}
+
+#main-menu a{
+  width: 15%;
+  height: 15%;
+  position: relative;
+}
+
+#main-menu img{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -2vw;
+}
+
+#main-menu label {
+  cursor: pointer;
+  width: 100%;
+}
+
+.blink {
+  position: relative;
+  transform: scale(1.5);
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+  0%, 100%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.1;
+  }
+}
+
+#main-menu p{
+  white-space: nowrap;
+}
+
+#main-menu p:first-child{
+  font-size: 50%;
+  font-weight: bold;
 }
 
 #award{
@@ -158,20 +495,19 @@ main{
   width: 100%;
   height: auto;
   padding-bottom: 50px;
-  background-color: beige;
   justify-content: center;
 }
+
 .images{
-  padding: 0 10%;
-  width: 80%;
+  padding: 5% 10%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 50px;
 }
 
 .images img{
-  width: 10vw;
-  max-width: 120px;
-  min-width: 100px;
+  width: 80px;
   height: auto;
 }
 
@@ -180,33 +516,93 @@ main{
   flex-direction: column;
   width: 100%;
   height: auto;
-  background-color: bisque;
   justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+
+}
+
+.divider{
+  width: 100vw;
+  height: 10px;
+  background-repeat: repeat-x;
+}
+
+.divider:last-child{
+  margin-top: 1%;
 }
 
 .banner{
+  width: 52%;
+  margin: 1% auto 0;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
+.banner:nth-child(2){
+  width: 25%;
+}
+
+.banner a{
+  width: 100%;
+  margin: 0 1%;
+  border-radius: 5px;
+}
+
+
 .banner img{
-  width: 50%;
+  width: 100%;
+}
+
+.banner .blink{
+  position: absolute;
+  width: 10%;
+  margin-right: 90%;
+}
+
+#story, #intro {
+  opacity: 0;
+  transition: 0.5s ease;
 }
 
 .desc{
   display: flex;
-  width:100%;
+  width: 100vw;
+  height: 100vh;
   justify-content: space-between;
-  background-size: cover; /* 이미지가 요소를 가득 채우도록 */
+  background-position: center center;
+  background-size: 100vw auto;
+  object-fit: cover;
 }
 
 .desc-main{
-  padding: 10% 0;
+  margin-top: 5%;
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: beige;
+  position: relative;
+  font-family: "Markazi Text", source-han-serif-japanese, serif;
+  color: white;
 }
+
+.desc-title{
+  font-size: 80px;
+  letter-spacing: 3px;
+  text-shadow: 40px 20px 0 rgba(255,255,255,0.2);
+}
+
+.desc-main img{
+  position: absolute;
+  width: 40%;
+}
+
+.desc-main img:nth-child(1){
+  left: 10%;
+}
+.desc-main img{}
+.desc-main img{}
+.desc-main img{}
 
 #products{
   display: flex;

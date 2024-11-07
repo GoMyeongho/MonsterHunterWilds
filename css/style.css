@@ -573,11 +573,10 @@ main{
   background-position: center center;
   background-size: 100vw auto;
   object-fit: cover;
+  background-repeat: no-repeat;
 }
 
 .desc-main{
-  margin-top: 5%;
-  margin-left: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -586,23 +585,71 @@ main{
   color: white;
 }
 
+
+
+#intro .desc-main{
+  margin-left: 0;
+  margin-right: 200px;
+}
+
 .desc-title{
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 100%;
   font-size: 80px;
   letter-spacing: 3px;
-  text-shadow: 40px 20px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+#story .desc-title::before {
+  content: 'STORY';
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  color: rgba(255, 255, 255, 0.2);
+  text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2); /* 스케일로 크기 확대 */
+}
+
+#intro .desc-title::before {
+  content: 'INTRODUCTION';
+  position: absolute;
+  top: 3%;
+  left: 18%;
+  color: rgba(255, 255, 255, 0.2);
+  text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2); /* 스케일로 크기 확대 */
 }
 
 .desc-main img{
   position: absolute;
-  width: 40%;
 }
 
-.desc-main img:nth-child(1){
-  left: 10%;
+.desc-title img:nth-child(1){
+  width: 15%;
+  right: 80%;
+  bottom: 85%;
 }
-.desc-main img{}
-.desc-main img{}
-.desc-main img{}
+.desc-title img:nth-child(2){
+  width: 9%;
+  right: 80%;
+  bottom: 75%;
+}
+.desc-title img:nth-child(3){
+  width: 6%;
+  right: 42%;
+  bottom: 86%;
+}
+.desc-title img:nth-child(4){
+  width: 12%;
+  right: 32%;
+  bottom: 69%;
+}
+
+.desc-content{
+  font-family: source-han-serif-korean,serif;
+}
+
 
 #products{
   display: flex;

@@ -80,9 +80,11 @@ body {
 
 #language{
   margin: clamp(0px, 2vw , 30px) 0;
-  display:inline-flex;
-  align-items: center;
   white-space: nowrap;
+  button{
+    display: flex;
+    align-items: center;
+  }
 }
 
 button img{
